@@ -1,0 +1,58 @@
+ion-toolbar{
+  --background: #FF66C4;
+  text-align: center;
+
+}
+
+.p2 {
+  text-align: center;
+  color: #1C191A;
+  font-size: 1rem;
+}
+
+ion-item {
+  .l1 {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+
+  }
+}
+
+.termo {
+  margin-right: 5%;
+  display: flex;
+}
+
+.p1 {
+  font-size: 0.8rem;
+}
+
+ion-card{
+  justify-content: center;
+  --background: #cdcccc;
+  ion-item{
+    --background: #cdcccc;
+  }
+  }
+
+.b1{
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 4%
+}
+
+  ion-accordion-group{
+    ion-item{
+      --background: #cdcccc;
+    }
+  }
+
+ .i1{
+  --background: #cdcccc;
+  ion-checkbox{
+    --background: #dfdede;
+  }
+ }
+
+//height: 2%;
