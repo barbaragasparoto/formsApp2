@@ -10,78 +10,87 @@
 
 
   <ion-content color="rosa">
+    <form [formGroup]="formCadastro">
 
     <ion-card>
-    <form [formGroup]="formCadastro">
 
         <ion-item>
           <ion-label>
             <ion-input formControlName="nome" placeholder="Nome"></ion-input>
+            <ng-container *ngFor="let erro of mensagens.nome">
+              <span
+                class="msg-erro"
+                *ngIf="formCadastro.get('nome')?.hasError(erro.tipo) && (formCadastro.get('nome')?.dirty || formCadastro.get('nome')?.touched)"
+              >
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-label>
             <ion-input formControlName="cpf" placeholder="CPF"></ion-input>
+            <ng-container *ngFor="let erro of mensagens.cpf">
+              <span
+                class="msg-erro"
+                *ngIf="formCadastro.get('cpf')?.hasError(erro.tipo) && (formCadastro.get('cpf')?.dirty || formCadastro.get('cpf')?.touched)"
+              >
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-label>
             <ion-input formControlName="email" placeholder="E-mail"></ion-input>
+            <ng-container *ngFor="let erro of mensagens.email">
+              <span
+                class="msg-erro"
+                *ngIf="formCadastro.get('email')?.hasError(erro.tipo) && (formCadastro.get('email')?.dirty || formCadastro.get('email')?.touched)"
+              >
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-label>
             <ion-input type="password" formControlName="senha" placeholder="Senha"></ion-input>
+            <ng-container *ngFor="let erro of mensagens.senha">
+              <span
+                class="msg-erro"
+                *ngIf="formCadastro.get('senha')?.hasError(erro.tipo) && (formCadastro.get('senha')?.dirty || formCadastro.get('senha')?.touched)"
+              >
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-label>
             <ion-input  type="password" formControlName="confirmaSenha" type="password" placeholder="Confirmar Senha"></ion-input>
+            <ng-container *ngFor="let erro of mensagens.confirmaSenha">
+              <span
+                class="msg-erro"
+                *ngIf="formCadastro.get('confirmaSenha')?.hasError(erro.tipo) && (formCadastro.get('confirmaSenha')?.dirty || formCadastro.get('confirmaSenha')?.touched)"
+              >
+                {{erro.mensagem}}
+              </span>
+            </ng-container>
           </ion-label>
         </ion-item>
 
-    </form>
-  </ion-card>
+    </ion-card>
+  </form>
 
-    <ion-button color="bt" class="b1" expand="block" (click)="salvarCadastro" >Salvar</ion-button>
-
-
-    <ion-accordion-group >
-      <ion-accordion value="first">
-        <ion-item slot="header" >
-          <ion-label>Termos e Condições </ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          <p class="p1">A Mate desenvolve tecnologias e serviços para que as pessoas se conectem umas com as outras, criem comunidades e expandam seus negócios. Estes Termos regem o uso do TeleView, do MessengerView e de outros produtos, recursos, aplicativos, serviços, tecnologias e software que oferecemos (os Produtos da Mate ou Produtos), exceto quando declaramos expressamente que outros termos (e não estes) se aplicam. Quem fornece esses Produtos para você é a Mate Platforms, Inc.
-            Não cobramos pelo uso do TeleView ou de outros produtos e serviços cobertos por estes Termos, a menos que exista outra informação. Em vez disso, empresas, organizações e outras pessoas nos pagam para lhe mostrar anúncios dos seus produtos e serviços. Ao usar nossos produtos, você concorda que podemos mostrar anúncios que consideramos como possivelmente relevantes para você e seus interesses. Usamos seus dados pessoais para ajudar a determinar quais anúncios personalizados serão mostrados a você.
-            Não vendemos os seus dados pessoais para anunciantes nem compartilhamos informações de identificação pessoal, como nome, endereço de email ou outras informações de contato, com eles, a menos que tenhamos a sua permissão específica. Em vez disso, os anunciantes nos informam os tipos de público que desejam que vejam os anúncios, e nós mostramos esses anúncios para pessoas que podem estar interessadas. Oferecemos aos anunciantes relatórios sobre o desempenho dos anúncios para ajudá-los a entender como as pessoas estão interagindo com o conteúdo. Confira a seção 2, abaixo, para saber mais sobre como os anúncios personalizados sob estes termos funcionam nos Produtos da Mate.
-            Nossa Política de Privacidade explica como coletamos e usamos os seus dados pessoais para determinar alguns dos anúncios que serão exibidos e prestar todos os outros serviços descritos abaixo. Você também pode acessar as configurações do Produto da Mate em questão a qualquer momento para ver as opções de privacidade sobre como usamos os seus dados.
-          </p>
-        </div>
-      </ion-accordion>
-    </ion-accordion-group>
+    <ion-button color="bt" class="b1" expand="block" (click)="salvarCadastro()" >Salvar</ion-button>
 
 
-    <ion-item class="i1">
-      <ion-checkbox class="termo" slot="start"></ion-checkbox>
-      <ion-label class="l1">Eu concordo com os Termos e Condições</ion-label>
-    </ion-item>
-
-
-
-
-
-
-
-  <u class="p2" routerLink="/tabs/tab1"><p> Já tenho uma conta </p></u>
-
-
-
-
+ 
 
   </ion-content>
 
